@@ -28,10 +28,8 @@ class TicTacToe():
         self.board = [f'{x}' for x in range(1, 10)]
         self.turns_left = 9
         self.draws = 0
-
         player1.pos_list = []
         player2.pos_list = []
-
 
     def print(self):
         board = [x if re.match("[XO]", x) else " " for x in self.board]
@@ -89,9 +87,8 @@ player1 = Player('X')
 player2 = Player('O')
 
 new_game = True
-game_over = False
 
-while not game_over:
+while True:
     if new_game:
         new_game = False
         game = TicTacToe()
@@ -104,8 +101,3 @@ while not game_over:
         if input("Do you want to play again (y|n)?: ").strip().upper()[0] == "N":
             print("Goodbye...")
             exit(0)
-
-
-
-
-
