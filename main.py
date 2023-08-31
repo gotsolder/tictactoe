@@ -9,7 +9,7 @@ logo = """
    |_| |_|\___|   |_|\__,_|\___|   |_|\___/ \___|                                                 
 """
 
-help = '''
+intro_help = '''
 When you choose a position, select a number from 1..9:
 
    1  !  2  |  3
@@ -23,7 +23,7 @@ When you choose a position, select a number from 1..9:
 ways_to_win = ['123', '456', '789', '147', '258', '369', '159', '357']
 
 
-class TicTacToe():
+class TicTacToe:
     def __init__(self):
         self.board = [f'{x}' for x in range(1, 10)]
         self.turns_left = 9
@@ -37,11 +37,11 @@ class TicTacToe():
         print(f"\n   {board[0]}  |  {board[1]}  |  {board[2]}")
         print(" -----+-----+-----")
         print(f"   {board[3]}  |  {board[4]}  |  {board[5]}")
-        print (" -----+-----+-----")
+        print(" -----+-----+-----")
         print(f"   {board[6]}  |  {board[7]}  |  {board[8]}\n")
 
 
-class Player():
+class Player:
     def __init__(self, xo):
         self.xo = xo
         self.name = input(f"Who is gonna be the {self.xo}'s: ").strip().title()
@@ -81,7 +81,7 @@ class Player():
 
 
 print(logo)
-print(help)
+print(intro_help)
 
 player1 = Player('X')
 player2 = Player('O')
