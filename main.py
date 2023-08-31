@@ -29,6 +29,10 @@ class TicTacToe():
         self.turns_left = 9
         self.draws = 0
 
+        player1.pos_list = []
+        player2.pos_list = []
+
+
     def print(self):
         board = [x if re.match("[XO]", x) else " " for x in self.board]
 
@@ -89,11 +93,9 @@ game_over = False
 
 while not game_over:
     if new_game:
+        new_game = False
         game = TicTacToe()
         game.print()
-        player1.pos_list = []
-        player2.pos_list = []
-        new_game = False
 
     if player1.take_turn() or player2.take_turn():
         # somebody won or there was a draw
